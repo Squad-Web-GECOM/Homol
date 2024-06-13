@@ -3,6 +3,62 @@
   padding: 0 !important;
 }
 
+#pre-home-wrapper .imagem-fundo,
+#pre-home-wrapper .col-xl-4.content .row img,
+#pre-home-wrapper .col-xl,
+#pre-home-wrapper .col-xl-3,
+#pre-home-wrapper #btnNaoCoop,
+#loading-wrapper {
+  display: none;
+}
+
+@media (min-width: 992px) and (max-width: 1280px) {
+  #pre-home-wrapper .col-xl-4.content .row h1 {
+    max-width: 80% !important;
+  }
+}
+@media (min-width: 1280px) {
+  #pre-home-wrapper .col-sm-6 {
+    flex: 100% !important;
+    max-width: 100% !important;
+  }
+}
+#pre-home-wrapper .content,
+#pre-home-wrapper .row.buttons {
+  margin: 0px !important;
+}
+
+#pre-home-wrapper {
+  padding-top: 2rem;
+}
+
+a:focus-visible,
+a:focus,
+button:focus,
+button:focus-visible {
+  outline: none !important;
+}
+
+header .bottom .logo img {
+  height: 37px !important;
+}
+
+header .bottom .troca-site {
+  display: block !important;
+}
+
+header .bottom .navbar-toogle {
+  margin: 0.25rem 0 !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--turq);
+}
+
 /* 
 --------------------------------
 GERAIS
@@ -124,11 +180,16 @@ img {
     background-position: 0% 50%;
   }
 }
-#gradiente {
+.gradiente {
   position: relative;
+  background-color: var(--branco);
+}
+.gradiente section {
+  position: relative;
+  z-index: 1;
 }
 
-.elements {
+#elements {
   --element-size: 1.25;
   overflow: hidden;
   position: absolute;
@@ -136,17 +197,20 @@ img {
   width: 100%;
   height: 100%;
   filter: blur(200px);
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
-.elements1 {
+#elements .elements1 {
   position: absolute;
   top: -15%;
   left: -60%;
   width: calc(100vw * var(--element-size));
   animation: element-flow1 40s infinite ease-in-out;
 }
-.elements2 {
+#elements .elements2 {
   position: absolute;
   bottom: -15%;
   right: -75%;
@@ -208,6 +272,52 @@ img {
   }
 }
 
+.owl-solucoes .owl-stage-outer {
+  overflow: visible !important;
+}
+.owl-prev, .owl-next {
+  position: absolute;
+  top: 40%;
+  translate: 0 -50%;
+  height: 25%;
+  width: 30px;
+  border-radius: var(--size-2);
+  transition: var(--transition-1);
+  opacity: 1;
+  font-size: 1.5rem;
+}
+.owl-prev:hover, .owl-next:hover {
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  opacity: 0.6;
+}
+.owl-prev.disabled, .owl-next.disabled {
+  opacity: 0;
+}
+.owl-prev {
+  left: -24px;
+}
+.owl-next {
+  right: -24px;
+}
+.owl-dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--size-2);
+  padding: var(--size-3);
+}
+.owl-dot {
+  height: var(--size-3);
+  width: var(--size-3);
+  border-radius: var(--size-3);
+  background-color: var(--cinza-400) !important;
+  transition: var(--transition-1);
+}
+.owl-dot.active {
+  width: calc(var(--size-3) * 2);
+  background-color: var(--turq) !important;
+}
+
 #banner .titulo h1 span {
   line-height: 1;
 }
@@ -251,6 +361,9 @@ img {
   opacity: 0.6;
   filter: blur(200px);
   pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 #banner .bg-banner:before {
   background-color: var(--turq-500);
@@ -308,8 +421,18 @@ img {
   }
 }
 
+#faixa .qrcode {
+  max-width: 150px;
+}
+#faixa .qrcode img {
+  width: 100%;
+}
+
 #solucoes {
   overflow: hidden;
+}
+#solucoes .card-img-top {
+  transition: var(--transition-1);
 }
 #solucoes .card-body {
   text-align: center;
@@ -317,6 +440,7 @@ img {
 }
 #solucoes .card-title {
   line-height: 1.12;
+  margin-bottom: 0.75rem !important;
 }
 #solucoes .card-text {
   line-height: 1.2;
@@ -324,57 +448,14 @@ img {
 #solucoes .card-footer {
   padding-top: 0px !important;
 }
-#solucoes .card:not(:hover) {
+#solucoes .card:hover {
+  scale: 1.025;
+}
+#solucoes .owl-stage-outer:hover .card:not(:hover) {
   scale: 0.975;
 }
-#solucoes .card:not(:hover) img {
-  filter: grayscale(1) blur(1px);
-}
-
-.owl-solucoes .owl-stage-outer {
-  overflow: visible;
-}
-.owl-prev, .owl-next {
-  position: absolute;
-  top: 50%;
-  translate: 0 -50%;
-  height: 25%;
-  width: 30px;
-  border-radius: var(--size-2);
-  transition: var(--transition-1);
-  opacity: 1;
-  font-size: 1.5rem;
-}
-.owl-prev:hover, .owl-next:hover {
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
-  opacity: 0.6;
-}
-.owl-prev.disabled, .owl-next.disabled {
-  opacity: 0;
-}
-.owl-prev {
-  left: -24px;
-}
-.owl-next {
-  right: -24px;
-}
-.owl-dots {
-  display: flex;
-  justify-content: center;
-  gap: var(--size-2);
-  padding: var(--size-3);
-}
-.owl-dot {
-  height: var(--size-3);
-  width: var(--size-3);
-  border-radius: var(--size-3);
-  background-color: var(--cinza-400) !important;
-  transition: var(--transition-1);
-}
-.owl-dot.active {
-  width: calc(var(--size-3) * 2);
-  background-color: var(--turq) !important;
+#solucoes .owl-stage-outer:hover .card:not(:hover) img {
+  filter: grayscale(1);
 }
 
 #video {
@@ -435,18 +516,165 @@ img {
   max-height: var(--header-icon-size);
 }
 
+#pj {
+  position: relative;
+}
+#pj:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: calc(50% - 1rem);
+  height: 100%;
+  background-color: var(--turq-300);
+  background-image: url(https://www.sicoob.com.br/documents/20128/202305458/pj.jpg);
+  background-size: cover;
+  border-radius: 0 var(--size-3) var(--size-3) 0;
+  z-index: 0;
+}
+@media (max-width: 992px) {
+  #pj:before {
+    right: 0;
+    width: 100%;
+    height: 416px;
+    border-radius: 0;
+  }
+}
+
+#infantil {
+  overflow: hidden;
+  position: relative;
+}
+#infantil:before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: calc(50% - 1rem);
+  height: 100%;
+  background-color: var(--turq-300);
+  background-image: url(https://www.sicoob.com.br/documents/20128/202305458/infantil.jpg);
+  background-size: cover;
+  border-radius: var(--size-3) 0 0 0;
+  z-index: 0;
+}
+@media (max-width: 992px) {
+  #infantil:before {
+    left: 0;
+    width: 100%;
+    height: 416px;
+    border-radius: var(--size-3);
+  }
+}
 #infantil .iconlist {
-  --iconlist-size:35px;
+  --iconlist-size: 35px;
 }
 #infantil .infantil {
   position: relative;
 }
 #infantil .infantil-infos {
-  max-width: 425px;
+  max-width: 445px;
 }
-#infantil .infantil-text, #infantil .infantil-blob {
+#infantil .infantil-text {
+  position: relative;
+  font-size: 1rem !important;
+}
+#infantil .infantil-blob {
   position: absolute;
   bottom: 0;
   right: 0;
-  z-index: 1;
+  z-index: 0;
+}
+#infantil .infantil-space {
+  min-height: 200px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+#futebol {
+  background-color: var(--verdee);
+  background-image: url(https://www.sicoob.com.br/documents/20128/202305458/estadio.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#futebol button {
+  background: transparent;
+  border: 0;
+}
+@media (max-width: 1200px) {
+  #futebol .carousel-control-prev {
+    left: -2rem;
+  }
+}
+#futebol .carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFFFFF' viewBox='0 0 20 20' width='16' height='16'%3e%3cpath d='M14.3,2.4c0.5,0.5,0.5,1.3,0,1.8L8.4,10l5.8,5.8c0.5,0.5,0.5,1.3,0,1.8c-0.5,0.5-1.3,0.5-1.8,0l-6.7-6.7c-0.5-0.5-0.5-1.3,0-1.8l6.7-6.7C13,1.9,13.8,1.9,14.3,2.4z'/%3e%3c/svg%3e");
+  width: 24px;
+  height: 24px;
+}
+@media (max-width: 1200px) {
+  #futebol .carousel-control-next {
+    right: -2rem;
+  }
+}
+#futebol .carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFFFFF' viewBox='0 0 20 20' width='16' height='16'%3e%3cpath d='M5.7,17.6c-0.5-0.5-0.5-1.3,0-1.8l5.8-5.8L5.7,4.2c-0.5-0.5-0.5-1.3,0-1.8c0.5-0.5,1.3-0.5,1.8,0l6.7,6.7 c0.5, 0.5, 0.5, 1.3, 0, 1.8l-6.7, 6.7C7, 18.1, 6.2, 18.1, 5.7, 17.6z'/%3e%3c/svg%3e");
+  width: 24px;
+  height: 24px;
+}
+#futebol .carousel-control-prev, #futebol .carousel-control-next {
+  top: 50%;
+  translate: 0 -50%;
+  height: 25%;
+  width: 30px;
+  border-radius: var(--size-2);
+  transition: var(--transition-1);
+}
+#futebol .carousel-control-prev:hover, #futebol .carousel-control-next:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  opacity: 0.6;
+}
+
+#footer-padrao {
+  background: var(--verdee);
+  fill: var(--branco);
+  padding: 0px !important;
+  margin: 0px !important;
+  overflow: hidden;
+}
+#footer-padrao .smaller {
+  font-size: 0.75rem !important;
+}
+#footer-padrao .social {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 3rem;
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 768px) {
+  #footer-padrao .social {
+    justify-content: center;
+  }
+}
+#footer-padrao .social a {
+  display: block;
+}
+#footer-padrao .c-rodape {
+  color: var(--branco) !important;
+}
+#footer-padrao.bg-branco {
+  background: var(--branco);
+  fill: var(--verdee);
+}
+#footer-padrao.bg-branco .c-rodape {
+  color: var(--verdee) !important;
+}
+#footer-padrao.bg-branco .social {
+  padding-bottom: 0rem;
+  margin-bottom: 1.5rem;
 }/*# sourceMappingURL=styles.css.map */
