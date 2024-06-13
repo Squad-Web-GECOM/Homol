@@ -211,71 +211,71 @@ img {
     animation: element-flow2 40s infinite ease-in-out;
   }
 
+  @keyframes element-flow1 {
+    0% {
+      top: -15%;
+      left: -60%;
+      rotate: 0deg;
+    }
+
+    25% {
+      top: -35%;
+      left: -30%;
+      rotate: 30deg;
+    }
+
+    50% {
+      top: -20%;
+      left: -50%;
+      rotate: -35deg;
+    }
+
+    75% {
+      top: -30%;
+      left: -90%;
+      rotate: 20deg;
+    }
+
+    100% {
+      top: -15%;
+      left: -60%;
+      rotate: 0deg;
+    }
+  }
+
+  @keyframes element-flow2 {
+    0% {
+      bottom: -15%;
+      right: -75%;
+      rotate: 0deg;
+    }
+
+    25% {
+      bottom: -25%;
+      right: -10%;
+      rotate: -20deg;
+    }
+
+    50% {
+      bottom: 0%;
+      right: -80%;
+      rotate: 25deg;
+    }
+
+    75% {
+      bottom: -40%;
+      right: -30%;
+      rotate: -30deg;
+    }
+
+    100% {
+      bottom: -15%;
+      right: -75%;
+      rotate: 0deg;
+    }
+  }
 }
 
-@keyframes element-flow1 {
-  0% {
-    top: -15%;
-    left: -60%;
-    rotate: 0deg;
-  }
-
-  25% {
-    top: -35%;
-    left: -30%;
-    rotate: 30deg;
-  }
-
-  50% {
-    top: -20%;
-    left: -50%;
-    rotate: -35deg;
-  }
-
-  75% {
-    top: -30%;
-    left: -90%;
-    rotate: 20deg;
-  }
-
-  100% {
-    top: -15%;
-    left: -60%;
-    rotate: 0deg;
-  }
-}
-
-@keyframes element-flow2 {
-  0% {
-    bottom: -15%;
-    right: -75%;
-    rotate: 0deg;
-  }
-
-  25% {
-    bottom: -25%;
-    right: -10%;
-    rotate: -20deg;
-  }
-
-  50% {
-    bottom: 0%;
-    right: -80%;
-    rotate: 25deg;
-  }
-
-  75% {
-    bottom: -40%;
-    right: -30%;
-    rotate: -30deg;
-  }
-
-  100% {
-    bottom: -15%;
-    right: -75%;
-    rotate: 0deg;
-  }
-}
 
 #banner {
 
@@ -315,9 +315,8 @@ img {
     position: relative;
     background-color: var(--turq);
     box-shadow: inset 0 0 50% var(--turq-600);
-    ;
     overflow: hidden;
-    pointer-events: none;
+
 
     .container {
       position: relative;
@@ -334,6 +333,7 @@ img {
       border-radius: 40%;
       opacity: .6;
       filter: blur(200px);
+      pointer-events: none;
     }
 
     &:before {
@@ -350,6 +350,11 @@ img {
       animation: blob2 12s linear infinite;
       animation-delay: 0.5s;
     }
+  }
+
+  img{
+    max-height: 430px;
+    height: 100%;
   }
 
 
@@ -406,9 +411,10 @@ img {
   overflow: hidden;
 
   .card {
-    border-radius: var(--size-3);
-    overflow: hidden;
-    height: 100%;
+    // border-radius: var(--size-3);
+    // border:1px solid $cinza-400;
+    // overflow: hidden;
+    // transition: var(--transition-1);
 
     &-body {
       text-align: center;
@@ -424,70 +430,91 @@ img {
     }
 
     &-footer {
-      background: $branco;
-      border: 0px !important;
+      // background: $branco;
+      // border: 0px !important;
       padding-top: 0px !important;
+    }
+
+    // &:hover{
+    //   border-color: $turq;
+    // }
+    &:not(:hover) {
+      scale: .975;
+
+      img {
+        filter: grayscale(1) blur(1px);
+
+      }
     }
   }
 
-  .owl {
-    &-carousel {
-      .owl-stage-outer {
-        overflow: visible;
-      }
+}
+
+.owl {
+  &-solucoes {
+    .owl-stage-outer {
+      overflow: visible;
     }
 
-    &-prev,
-    &-next {
-      position: absolute;
-      top: 50%;
-      translate: 0 -50%;
-      height: 25%;
-      width: 30px;
-      border-radius: var(--size-2);
-      transition: var(--transition-1);
-      opacity: .2;
-      font-size: 1.5rem;
-      backdrop-filter: blur(50px);
+  }
 
-      &:hover{
-        opacity: .6;
-        background: $turq;
-      }
-    }
-    &-prev{
-      left: -24px;
-    }
-    &-next {
-      right: -24px;
+  &-prev,
+  &-next {
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    height: 25%;
+    width: 30px;
+    border-radius: var(--size-2);
+    transition: var(--transition-1);
+    opacity: 1;
+    font-size: 1.5rem;
+
+    &:hover {
+      backdrop-filter: blur(10px);
+      opacity: .6;
+
     }
 
-    &-dots{
-      display: flex;
-      justify-content: center;
-      gap: var(--size-2);
-      padding: var(--size-3);
+    &.disabled {
+      opacity: 0;
     }
-    &-dot{
-      height: var(--size-3);
-      width: var(--size-3);
-      border-radius: var(--size-3);
-      background-color: $cinza-400;
-      transition: var(--transition-1);
+  }
 
-      &.active{
-        width: calc(var(--size-3)*2);
-        background-color: $turq;
-      }
+  &-prev {
+    left: -24px;
+  }
+
+  &-next {
+    right: -24px;
+  }
+
+  &-dots {
+    display: flex;
+    justify-content: center;
+    gap: var(--size-2);
+    padding: var(--size-3);
+  }
+
+  &-dot {
+    height: var(--size-3);
+    width: var(--size-3);
+    border-radius: var(--size-3);
+    background-color: $cinza-400!important;
+    transition: var(--transition-1);
+
+    &.active {
+      width: calc(var(--size-3)*2);
+      background-color: $turq!important;
     }
   }
 }
 
-#video{
+#video {
   position: relative;
   overflow: hidden;
 
-  video{
+  video {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -498,20 +525,77 @@ img {
     z-index: 0;
     transform: translateX(-50%) translateY(-50%);
   }
-  .overlay{
+
+  .overlay {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
     background-color: $verdee;
-    background-image: linear-gradient(0deg, black 0%, rgba(0,0,0,.2) 50%, black 100%);;
+    background-image: linear-gradient(0deg, black 0%, rgba(0, 0, 0, .2) 50%, black 100%);
+    ;
     opacity: 0.5;
     z-index: 1;
     mix-blend-mode: multiply;
   }
-  .container{
+
+  .container {
     position: relative;
     z-index: 2;
+  }
+}
+
+#motivos{
+
+  .card {
+    border: 1px solid $turq;
+    background: linear-gradient(0deg, $turq-500, $turq);
+
+    &-body {
+      display: flex;
+      align-items: center;
+      height: calc(var(--font-size-5)*1.15*4 + 1.25rem*2);
+    }
+
+    &-title {
+      line-height: 1.12;
+      color: $verdee;
+    }
+
+    &-header {
+      padding-bottom: 0px !important;
+      &-icon{
+        --header-icon-size: 50px;
+        width: var(--header-icon-size);
+        height: var(--header-icon-size);
+        svg{
+          max-width: var(--header-icon-size);
+          max-height: var(--header-icon-size);
+        }
+      }
+    }
+
+  }
+}
+
+#infantil{
+  .iconlist{
+    --iconlist-size:35px;
+  }
+
+  .infantil{
+    position: relative;
+
+    &-infos{
+      max-width: 425px;
+    }
+
+    &-text, &-blob{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+    }
   }
 }
