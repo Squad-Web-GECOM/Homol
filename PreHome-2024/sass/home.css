@@ -1,0 +1,63 @@
+.banner-carousel .product {
+  background-color: var(--cinza-400) !important;
+  margin-bottom: var(--size-5);
+}
+.banner-carousel .carousel {
+  overflow: visible;
+}
+.banner-carousel .carousel-item {
+  border-radius: var(--size-3);
+  overflow: hidden;
+}
+.banner-carousel .carousel-indicators {
+  margin-block: 1rem;
+  bottom: -48px;
+}
+.banner-carousel .carousel-indicators li {
+  height: var(--size-3);
+  width: var(--size-3);
+  background-color: var(--cinza-400) !important;
+  margin-right: var(--size-1);
+  margin-left: var(--size-1);
+  transition: var(--transition-1);
+  border-radius: var(--size-3);
+  opacity: 1;
+  border: 0px !important;
+}
+.banner-carousel .carousel-indicators li.active {
+  width: calc(var(--size-3) * 2);
+  background-color: var(--turq) !important;
+}
+
+.list-news {
+  margin-top: var(--size-5);
+}
+.list-news .one-news h3 {
+  font-size: var(--font-size-5) !important;
+}
+.list-news h3 {
+  font-size: var(--font-size-6) !important;
+  text-wrap: balance;
+  line-height: 1.12;
+}
+.list-news .split {
+  margin: 0px !important;
+}
+.list-news .news,
+.list-news .banner-carousel.product .carousel-item {
+  border-radius: var(--size-3);
+  overflow: hidden;
+}
+
+.noticias-veja-mais {
+  margin-block: var(--size-5);
+}
+
+/* - Hotfix youtube icon - */
+.fa-youtube-play:before {
+  content: "\f167";
+}
+
+#cooperado .aproveitar-title {
+  max-width: 400px;
+}/*# sourceMappingURL=home.css.map */
