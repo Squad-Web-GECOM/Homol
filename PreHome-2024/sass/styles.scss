@@ -6,16 +6,14 @@
   padding: 0 !important;
 }
 
-@import 'prehome.scss';
+// @import 'prehome.scss';
 
-// @import 'home.scss';
+@import 'home.scss';
+
+@import 'bg-fluid.scss';
 
 html {
   scroll-behavior: smooth;
-}
-
-body {
-  background-color: var(--turq);
 }
 
 a:focus-visible,
@@ -67,17 +65,6 @@ img {
   }
 }
 
-
-.gradiente {
-  position: relative;
-  background-color: $branco;
-  overflow: hidden;
-
-  section {
-    position: relative;
-    // z-index: 1;
-  }
-}
 
 #elements {
   --element-size: 1.25;
@@ -290,103 +277,12 @@ img {
     }
   }
 
-  .bg-banner {
-    margin: auto;
-    position: relative;
-    background-color: var(--turq);
-    box-shadow: inset 0 0 50% var(--turq-600);
-    overflow: hidden;
-
-
-    .container {
-      position: relative;
-      z-index: 1;
-    }
-
-    &:before,
-    &:after {
-      content: "";
-      position: absolute;
-      z-index: 0;
-      width: 100%;
-      aspect-ratio: 1/1;
-      border-radius: 40%;
-      opacity: .6;
-      filter: blur(200px);
-      pointer-events: none;
-      user-select: none;
-    }
-
-    &:before {
-      background-color: var(--turq-500);
-      top: -150%;
-      left: -50%;
-      animation: blob1 12s linear infinite;
-    }
-
-    &:after {
-      background-color: var(--turq-300);
-      bottom: -175%;
-      right: -62%;
-      animation: blob2 12s linear infinite;
-      animation-delay: 0.5s;
-    }
-  }
-
   img {
     max-height: 430px;
     height: 100%;
     translate: 0 1px;
   }
 
-
-  @keyframes blob1 {
-    0% {
-      transform: rotate(0deg);
-      translate: 0;
-    }
-
-    25% {
-      translate: 80% 10%;
-    }
-
-    50% {
-      translate: 90% 100%;
-    }
-
-    75% {
-      translate: 10% 20%;
-    }
-
-    100% {
-      transform: rotate(360deg);
-      translate: 0;
-    }
-  }
-
-  @keyframes blob2 {
-    0% {
-      transform: rotate(0deg);
-      translate: 0;
-    }
-
-    25% {
-      translate: -80% -10%;
-    }
-
-    50% {
-      translate: -90% -100%;
-    }
-
-    75% {
-      translate: -10% -20%;
-    }
-
-    100% {
-      transform: rotate(360deg);
-      translate: 0;
-    }
-  }
 }
 
 #faixa {
@@ -569,7 +465,7 @@ img {
     background-color: $turq-300;
     background-image: url(https://www.sicoob.com.br/documents/20128/202305458/pj.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: top center;
     border-radius: 0 var(--size-3) var(--size-3) 0;
     z-index: 0;
 

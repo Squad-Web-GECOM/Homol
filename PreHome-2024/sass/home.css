@@ -5,7 +5,7 @@
 .banner-carousel .carousel {
   overflow: visible;
 }
-.banner-carousel .carousel-item {
+.banner-carousel .carousel-item img {
   border-radius: var(--size-3);
   overflow: hidden;
 }
@@ -29,26 +29,32 @@
   background-color: var(--turq) !important;
 }
 
-.list-news {
+.noticias {
   margin-top: var(--size-5);
 }
-.list-news .one-news h3 {
+.noticias h2.portlet-title-text {
+  font-size: var(--font-size-3) !important;
+  text-align: center;
+}
+.noticias .list-news {
+  margin-top: var(--size-4);
+}
+.noticias .list-news .one-news h3 {
   font-size: var(--font-size-5) !important;
 }
-.list-news h3 {
+.noticias .list-news h3 {
   font-size: var(--font-size-6) !important;
   text-wrap: balance;
   line-height: 1.12;
 }
-.list-news .split {
+.noticias .list-news .split {
   margin: 0px !important;
 }
-.list-news .news,
-.list-news .banner-carousel.product .carousel-item {
+.noticias .list-news .news,
+.noticias .list-news .banner-carousel.product .carousel-item {
   border-radius: var(--size-3);
   overflow: hidden;
 }
-
 .noticias-veja-mais {
   margin-block: var(--size-5);
 }
